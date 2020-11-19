@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     });
     //timer
-    let deadline = "2020-11-16";
+    let deadline = "2020-11-26";
 
     function getTimeRemaining(endtime) {
         let t = Date.parse(endtime) - Date.parse(new Date()),
@@ -75,4 +75,20 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     }
     setClock("timer", deadline);
+});
+// modal
+let more = document.querySelector(".more"),
+    overlay = document.querySelector(".overlay"),
+    popupClose = document.querySelector(".popup-close");
+
+more.addEventListener("click", function () {
+    overlay.style.display = "block";
+    this.classList.add("more-splash");
+    document.body.style.overflow = "hidden";
+});
+
+popupClose.addEventListener("click", function () {
+    overlay.style.display = "none";
+    more.classList.remove("more-splash");
+    document.body.style.overflow = "";
 });
