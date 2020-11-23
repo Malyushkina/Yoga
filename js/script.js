@@ -5,10 +5,13 @@ window.addEventListener("DOMContentLoaded", function () {
         tabConent = document.querySelectorAll(".info-tabcontent");
 
     function hideTabContent(a) {
-        for (let i = a; i < tabConent.length; i++) {
-            tabConent[i].classList.remove("show");
-            tabConent[i].classList.add("hide");
-        }
+        tabConent.forEach((element, i) => {
+            if (i >= a) {
+                element.classList.remove("show");
+                element.classList.add("hide");
+            }
+
+        });
     }
     hideTabContent(1);
 
