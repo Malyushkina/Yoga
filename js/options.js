@@ -6,10 +6,15 @@ class Options {
         this.fontSize = fontSize;
         this.textAlign = textAlign;
     }
-    createDiv() {
-        let element = document.createElement("div");
-        document.body.appendChild(element);
 
+    createDiv() {
+        let elem = document.createElement('div');
+        document.body.appendChild(elem);
+        let param = `height:${this.height}px; width:${this.width}px; background-color:${this.bg}; font-size:${this.fontSize}px; text-align:${this.textAlign}`;
+        elem.style.cssText = param;
     }
 
 }
+const item = new Options (300,200,"lightblue",15,"left");
+item.createDiv();
+console.log(element.param);
